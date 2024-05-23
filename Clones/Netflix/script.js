@@ -2,7 +2,7 @@
 const apikey = '17c6301991dc718f21d3d80979326a44'
 const apiEndPoint = "https://api.themoviedb.org/3";
 const imgPath = "https://image.tmdb.org/t/p/original"
-
+const trending = "/trending/movie/week?api_key="
 
 const apiPaths = {
     fetchAllCategories: `${apiEndPoint}/genre/movie/list?api_key=${apikey}`,
@@ -21,7 +21,7 @@ function fetchAndBuildAllSections() {
         .then(res => {
             const categories = res.genres;
             if (Array.isArray(categories) && categories.length) {
-                categories.slice(0, 2).forEach(category => {
+                categories.forEach(category => {
                     fethAndBuildMovieSection(
                         apiPaths.fetchMoviesList(category.id), category)
                 });
