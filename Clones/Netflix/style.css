@@ -80,6 +80,7 @@ body {
 .explore-nudge {
     color: #54b9c5;
     font-size: 12px;
+    margin-left: 5px;
     display: none;
 }
 
