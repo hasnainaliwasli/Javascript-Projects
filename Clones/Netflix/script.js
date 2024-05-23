@@ -3,7 +3,7 @@ const apikey = '17c6301991dc718f21d3d80979326a44'
 const apiEndPoint = "https://api.themoviedb.org/3"
 const apiPaths = {
     fetchAllCategories: `${apiEndPoint}/genre/movie/list?api_key=${apikey}`,
-    fetchMoviesList:  `${apiEndPoint}/genre/movie/list?api_key=${apikey}`
+    fetchMoviesList: (id) => `${apiEndPoint}/discover/movie?api_key=${apikey}&with_genres=${id}`
 
 }
 
@@ -18,8 +18,9 @@ function fetchAndBuildAllSections() {
         .then(res => {
             const categories = res.genres;
             if (Array.isArray(categories) && categories.length) {
-                categories.forEach(category => {
-                    fethAndBuildMovieSection(category)
+                categories.slice(0,2).forEach(category => {
+                    fethAndBuildMovieSection(
+                        apiPaths.fetchMoviesList(category.id), category)
                 });
 
             }
@@ -29,8 +30,13 @@ function fetchAndBuildAllSections() {
 }
 
 
-function fethAndBuildMovieSection(category) {
-    console.log(category);
+function fethAndBuildMovieSection(fetchUrl, category) {
+    // console.log(fetchUrl, category);
+
+    fetch(fetchUrl)
+        .then(res => res.json())
+        .then(res => console.log(res.results))
+        .catch(err =>console.error(err))
 }
 
 

@@ -19,7 +19,8 @@ body {
 #header {
     /* background-color: grey; */
 }
-.header-cont{
+
+.header-cont {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -49,6 +50,7 @@ body {
     opacity: 0.83;
     font-weight: 500;
 }
+
 .nav-item.active {
     color: white;
     opacity: 1;
@@ -59,22 +61,65 @@ body {
     cursor: pointer;
 }
 
-.right-cont img{
+.right-cont img {
     max-width: 36px;
     cursor: pointer;
-    
+
 }
-.right-cont svg, .right-cont img {
+
+.right-cont svg,
+.right-cont img {
     margin-right: 22px;
     cursor: pointer;
 
 }
 
+/* Movies Section CSS */
+.movies-section {}
+
+.explore-nudge {
+    color: #54b9c5;
+    font-size: 12px;
+    display: none;
+}
+
+.movie-section-heading:hover .explore-nudge {
+    display: inline-block;
+}
+
+.movie-section-heading {
+    color: white;
+    font-synthesis: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.movie-item {
+    width: 245px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+.movie-item:hover {
+    transform: scale(1.3);
+    transition: transform linear 300ms;
+    cursor: pointer;
+}
+
+
+.movie-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 
 /* Responsive Css */
-@media (max-width:767px){
-    .main-nav{
+@media (max-width:767px) {
+    .main-nav {
         display: none;
     }
 }
