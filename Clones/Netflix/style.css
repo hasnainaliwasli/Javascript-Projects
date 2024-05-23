@@ -17,7 +17,13 @@ body {
 
 /* Header Css */
 #header {
-    /* background-color: grey; */
+    background-color: transparent;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+
 }
 
 .header-cont {
@@ -128,10 +134,12 @@ body {
 
 .banner-section {
     background-repeat: no-repeat;
-    min-height: 98vh;
+    min-height: 100vh;
     background-size: cover;
-
+    position: relative;
+    padding-top: 80px;
 }
+
 
 .banner-content {
     display: flex;
@@ -145,6 +153,7 @@ body {
     line-height: 1.1;
     margin-bottom: 16px;
     margin: 0;
+    max-width: 40%;
 }
 
 .banner-info {
@@ -153,6 +162,7 @@ body {
     font-weight: 700;
     line-height: 1.5;
     color: white;
+
 }
 
 .banner-overview {
@@ -160,6 +170,7 @@ body {
     font-weight: 400;
     line-height: 1.33;
     color: white;
+    max-width: 45%;
 }
 
 .action-buttons-cont {
@@ -178,17 +189,32 @@ body {
     flex-direction: row;
     font-size: 16px;
     font-weight: 700;
-    align-items:center;
-
+    align-items: center;
+    cursor: pointer;
 }
-.action-button:last-child{
+
+.action-button:last-child {
     color: white;
-    background-color: rgba(109 ,109 , 110,0.7);
+    background-color: rgba(109, 109, 110, 0.7);
+}
+
+.banner-fadeBottom {
+    height: 120px;
+    background: linear-gradient(180deg, transparent, rgba(37, 37, 37, .61), #141414);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Responsive Css */
 @media (max-width:767px) {
     .main-nav {
         display: none;
+    }
+
+    .banner-overview,
+    .banner-title {
+        max-width: 100%;
     }
 }
