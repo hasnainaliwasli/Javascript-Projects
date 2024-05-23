@@ -32,11 +32,11 @@ function buildBannerSection(movie) {
     console.log(movie);
     const bannerCont = document.getElementById('banner-section')
     bannerCont.style.backgroundImage = `url(${imgPath}${movie.backdrop_path})`
-    
+
     // To change the opacity of the background Image
     bannerCont.style.background = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${imgPath}${movie.backdrop_path})`;
     bannerCont.style.backgroundSize = 'cover';
-    
+
     const div = document.createElement('div')
     div.innerHTML = `
     <div class="banner-content container">
@@ -130,4 +130,10 @@ function buildMoviesSection(list, categoryName) {
 
 window.addEventListener('load', function () {
     init()
+
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header')
+        if (window.scrollY > 5) header.classList.add('black-bg')
+        else header.classList.remove('black-bg')
+    })
 })

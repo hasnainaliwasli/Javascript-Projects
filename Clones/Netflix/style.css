@@ -16,14 +16,18 @@ body {
 }
 
 /* Header Css */
-#header {
+header {
     background-color: transparent;
     position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
+    transition: background-color ease 600ms;
+}
 
+header.black-bg {
+    background-color: rgb(20, 20, 20);
 }
 
 .header-cont {
@@ -47,6 +51,7 @@ body {
     list-style: none;
     display: inline-flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .nav-item {
