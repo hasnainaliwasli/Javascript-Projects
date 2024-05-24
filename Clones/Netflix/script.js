@@ -18,7 +18,7 @@ const apiPaths = {
 function init() {
     fetchAndBuildAllSections()
     fetchTrendingMovies()
-    searchMovieTrailer('The Idea of You')
+    // searchMovieTrailer('The Idea of You')
 }
 
 function fetchTrendingMovies() {
@@ -112,7 +112,7 @@ function buildMoviesSection(list, categoryName) {
     const moviesListHTML = list.map(item => {
         return `
         <img class="movie-item" src="${imgPath}${item.poster_path}"
-                    alt="${item.title}">
+                    alt="${item.title}" onclick="searchMovieTrailer('${item.title}')">
         `
     }).join('')
 
@@ -143,7 +143,11 @@ function searchMovieTrailer(movieName) {
     fetch(apiPaths.fetchYoutube(movieName))
         .then(res => res.json())
         .then(res => {
-            console.log(res.items[0].id.videoId);
+            const results = res.items[0].id.videoId
+            const url = `https://www.youtube.com/watch?v=${results}`
+
+            console.log(url);
+            window.open(url , '_blank')
         })
         .catch(err => console.log(err))
 }
