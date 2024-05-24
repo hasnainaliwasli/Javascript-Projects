@@ -1,13 +1,17 @@
 // Api Data
 const apikey = '17c6301991dc718f21d3d80979326a44'
 const apiEndPoint = "https://api.themoviedb.org/3";
+const youtubeApiEndPoint = "https://www.googleapis.com/youtube/v3/";
 const imgPath = "https://image.tmdb.org/t/p/original"
-const trending = ""
+// const trending = ""
+const youtubeApi = 'AIzaSyBj3NN3OJN6ahaPSW61FBtBMgG0L9Vp06c'
 
 const apiPaths = {
     fetchAllCategories: `${apiEndPoint}/genre/movie/list?api_key=${apikey}`,
     fetchMoviesList: (id) => `${apiEndPoint}/discover/movie?api_key=${apikey}&with_genres=${id}`,
-    fetchTrending: `${apiEndPoint}/trending/movie/week?api_key=${apikey}&language=en-US`
+    fetchTrending: `${apiEndPoint}/trending/movie/week?api_key=${apikey}&language=en-US`,
+    fetchYoutube: (query) => `${youtubeApiEndPoint}search?part=snipepet&q=${query}&key=${youtubeApi}`
+
 }
 
 
@@ -29,7 +33,7 @@ function fetchTrendingMovies() {
 }
 
 function buildBannerSection(movie) {
-    console.log(movie);
+    // console.log(movie);
     const bannerCont = document.getElementById('banner-section')
     bannerCont.style.backgroundImage = `url(${imgPath}${movie.backdrop_path})`
 
@@ -61,6 +65,20 @@ function buildBannerSection(movie) {
     `
 
     bannerCont.appendChild(div)
+}
+
+
+function searchMovieTrailer(movieName) {
+    if (!movieName) {
+        return
+    }
+
+    fetch(apiPaths.fetchYoutube)
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => console.log(err))
 }
 
 
@@ -131,7 +149,7 @@ function buildMoviesSection(list, categoryName) {
 window.addEventListener('load', function () {
     init()
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const header = document.getElementById('header')
         if (window.scrollY > 5) header.classList.add('black-bg')
         else header.classList.remove('black-bg')

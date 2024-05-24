@@ -86,7 +86,9 @@ header.black-bg {
 }
 
 /* Movies Section CSS */
-.movies-section {}
+.movies-section {
+    margin: 41px 0;
+}
 
 .explore-nudge {
     color: #54b9c5;
