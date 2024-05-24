@@ -10,7 +10,8 @@ const apiPaths = {
     fetchAllCategories: `${apiEndPoint}/genre/movie/list?api_key=${apikey}`,
     fetchMoviesList: (id) => `${apiEndPoint}/discover/movie?api_key=${apikey}&with_genres=${id}`,
     fetchTrending: `${apiEndPoint}/trending/movie/week?api_key=${apikey}&language=en-US`,
-    fetchYoutube: (query) => `${youtubeApiEndPoint}search?part=snipepet&q=${query}&key=${youtubeApi}`
+    // fetchYoutube: (query) => `${youtubeApiEndPoint}search?part=snipepet&q=${query}&key=${youtubeApi}`
+    fetchYoutube: (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=the%20${query}2020trailer&key=AIzaSyBj3NN3OJN6ahaPSW61FBtBMgG0L9Vp06c`
 
 }
 
@@ -19,6 +20,7 @@ const apiPaths = {
 function init() {
     fetchAndBuildAllSections()
     fetchTrendingMovies()
+    searchMovieTrailer('The Idea of You')
 }
 
 function fetchTrendingMovies() {
@@ -68,18 +70,7 @@ function buildBannerSection(movie) {
 }
 
 
-function searchMovieTrailer(movieName) {
-    if (!movieName) {
-        return
-    }
 
-    fetch(apiPaths.fetchYoutube)
-        .then(res => res.json())
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err => console.log(err))
-}
 
 
 function fetchAndBuildAllSections() {
@@ -143,6 +134,20 @@ function buildMoviesSection(list, categoryName) {
     moviesCont.appendChild(div)
 
     // console.log(moviesSectionHTML);
+}
+
+
+
+function searchMovieTrailer(movieName) {
+    if (!movieName) {
+        return
+    }
+    fetch(apiPaths.fetchYoutube(movieName))
+        .then(res => res.json())
+        .then(res => {
+            console.log(res.items[0].id.videoId);
+        })
+        .catch(err => console.log(err))
 }
 
 
