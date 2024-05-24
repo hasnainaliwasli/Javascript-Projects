@@ -3,14 +3,12 @@ const apikey = '17c6301991dc718f21d3d80979326a44'
 const apiEndPoint = "https://api.themoviedb.org/3";
 const youtubeApiEndPoint = "https://www.googleapis.com/youtube/v3/";
 const imgPath = "https://image.tmdb.org/t/p/original"
-// const trending = ""
-const youtubeApi = 'AIzaSyBj3NN3OJN6ahaPSW61FBtBMgG0L9Vp06c'
+
 
 const apiPaths = {
     fetchAllCategories: `${apiEndPoint}/genre/movie/list?api_key=${apikey}`,
     fetchMoviesList: (id) => `${apiEndPoint}/discover/movie?api_key=${apikey}&with_genres=${id}`,
     fetchTrending: `${apiEndPoint}/trending/movie/week?api_key=${apikey}&language=en-US`,
-    // fetchYoutube: (query) => `${youtubeApiEndPoint}search?part=snipepet&q=${query}&key=${youtubeApi}`
     fetchYoutube: (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=the%20${query}2020trailer&key=AIzaSyBj3NN3OJN6ahaPSW61FBtBMgG0L9Vp06c`
 
 }
