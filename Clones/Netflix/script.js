@@ -68,9 +68,6 @@ function buildBannerSection(movie) {
 }
 
 
-
-
-
 function fetchAndBuildAllSections() {
     fetch(apiPaths.fetchAllCategories)
         .then(res => res.json())

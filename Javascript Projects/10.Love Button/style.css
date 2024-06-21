@@ -1,0 +1,11 @@
+.main_cont{
+    height: 100vh;
+    background-image: url("./bg_love.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#inner_cont{
+   background-color: #dd5e89 → #f7bb97;
+}
