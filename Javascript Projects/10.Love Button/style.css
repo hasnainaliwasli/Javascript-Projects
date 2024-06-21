@@ -1,4 +1,8 @@
-body {}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .main_cont {
     height: 100vh;
@@ -9,14 +13,27 @@ body {}
 
 #inner_cont {
     /* background-color: #dd5e89 → #f7bb97; */
+    display: none;
 }
 
 #q_heading {
     font-family: "Love Ya Like A Sister", cursive;
     font-size: 80px;
     color: red;
+    user-select: none;
     /* font-weight: 700; */
 }
+
+#no_btn {
+    padding: 0px !important;
+    cursor: none;
+    user-select: none;
+    border-radius: 5px;
+    margin-top: 75px !important;
+
+}
+
+
 
 .btns {
     background-color: pink;
@@ -30,6 +47,7 @@ body {}
     outline: none;
     position: relative;
     z-index: 1;
+    user-select: none;
 }
 
 .btns.heart {
@@ -78,3 +96,16 @@ body {}
     font-weight: bold;
     transition: all 0.3s ease;
 }
+
+
+/* Message after i click YES */
+
+#msg {
+    user-select: none;
+}
+
+
+#msg_cont{
+
+}
+
