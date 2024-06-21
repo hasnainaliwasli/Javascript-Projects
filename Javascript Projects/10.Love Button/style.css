@@ -13,7 +13,7 @@ body {
 
 #inner_cont {
     /* background-color: #dd5e89 → #f7bb97; */
-    display: none;
+    /* display: none; */
 }
 
 #q_heading {
@@ -102,10 +102,13 @@ body {
 
 #msg {
     user-select: none;
+    font-family: "Love Ya Like A Sister", cursive;
+    font-size: 80px;
+    color: red;
 }
 
 
 #msg_cont{
-
+ display: none;
 }
 
