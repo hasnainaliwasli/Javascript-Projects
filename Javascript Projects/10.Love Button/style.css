@@ -1,11 +1,80 @@
-.main_cont{
+body {}
+
+.main_cont {
     height: 100vh;
     background-image: url("./bg_love.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
-#inner_cont{
-   background-color: #dd5e89 → #f7bb97;
+#inner_cont {
+    /* background-color: #dd5e89 → #f7bb97; */
+}
+
+#q_heading {
+    font-family: "Love Ya Like A Sister", cursive;
+    font-size: 80px;
+    color: red;
+    /* font-weight: 700; */
+}
+
+.btns {
+    background-color: pink;
+    color: red;
+    font-size: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.btns.heart {
+    width: 100px;
+    height: 90px;
+    background-color: red;
+    border-radius: none;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.btns.heart::before,
+.btns.heart::after {
+    content: '';
+    width: 100px;
+    height: 90px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btns.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.btns.heart::after {
+    top: 0;
+    left: 50px;
+}
+
+.btns.heart span {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    transform: rotate(45deg);
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
