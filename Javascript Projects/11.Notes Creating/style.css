@@ -1,3 +1,4 @@
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -49,11 +50,11 @@ button {
     cursor: pointer;
 }
 
-.text {
+.notes-container {
     min-width: 100%;
 }
 
-.input_box {
+.input-box {
     position: relative;
     width: 40em;
     padding: 20px;
@@ -61,26 +62,22 @@ button {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
-    margin: 0px 0px 20px ;
+    margin: 0px 0px 20px;
 }
 
-.editable_text {
-    min-width:100%;
+.input-box[contenteditable="true"] {
+    min-width: 100%;
     padding: 10px;
     background-color: #fff;
     border: none;
     outline: none;
 }
 
-.trashBtn {
+.input-box img {
     position: absolute;
     right: 0px;
     bottom: -20px;
-    border: none;
-    background: none;
     cursor: pointer;
-}
-
-.fa-trash {
-    font-size: 18px;
+    width: 18px;
+    height: 18px;
 }

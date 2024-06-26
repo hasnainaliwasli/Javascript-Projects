@@ -9,41 +9,57 @@ function getElement(id) {
 // All Elements
 
 const createBtn = getElement('createBtn')
-const input_box = getElement('input_box')
+const notes = document.querySelectorAll('.input_box')
 const trashBtn = getElement('trashBtn')
-let text = getElement('text')
+const notesContainer = document.querySelector('.notes-container')
 
 
 // For Local storage
 
-// Function for creating Notes
+function showNotes() {
+    notesContainer.innerHTML = localStorage.getItem("notes")
+}
+showNotes()
+
+function updateNotes() {
+    localStorage.setItem('notes', notesContainer.innerHTML)
+}
+
+
 
 createBtn.addEventListener('click', () => {
-    let firstDiv = document.createElement('div');
-    let textDiv = document.createElement('div');
-    let btn = document.createElement('button');
-    let innerBtn = '<i class="fa-solid fa-trash"></i>';
+    let inputBox = document.createElement('p')
+    let img = document.createElement('img');
+    img.src = './images/delete.png'
+    inputBox.className = 'input-box'
+    inputBox.setAttribute('contenteditable', 'true');
+    notesContainer.appendChild(inputBox).appendChild(img)
+})
 
-    btn.innerHTML = innerBtn;
-    btn.className = 'trashBtn';
 
-    firstDiv.className = 'input_box';
-    textDiv.className = 'editable_text';
-    textDiv.setAttribute('contenteditable', 'true');
 
-    firstDiv.appendChild(textDiv);
-    firstDiv.appendChild(btn);
+notesContainer.addEventListener('click', (e) => {
 
-    document.getElementById('text').appendChild(firstDiv);
-
-    console.log(firstDiv);
-});
-
-text.addEventListener('click',(e)=>{
-    if(e.target.tagName === 'I' ){
-        e.target.parentElement.parentElement.remove();
-    }
-    if(e.target.tagName === 'IMG' ){
+    if (e.target.tagName === 'IMG') {
         e.target.parentElement.remove();
+        updateNotes()
+
+    }
+    else if (e.target.tagName === 'P') {
+        let notes = document.querySelectorAll('.input-box')
+        notes.forEach(nt => {
+            nt.onkeyup = function () {
+                updateNotes()
+            }
+        })
+
+    }
+})
+
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        document.execCommand("insertLineBreak");
+        event.preventDefault();
     }
 })
