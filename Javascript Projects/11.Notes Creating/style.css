@@ -57,6 +57,7 @@ button {
 .input-box {
     position: relative;
     width: 40em;
+    min-height: 100px;
     padding: 20px;
     padding-bottom: 30px;
     border: 1px solid #ccc;
@@ -70,14 +71,14 @@ button {
     padding: 10px;
     background-color: #fff;
     border: none;
-    outline: none;
+    /* outline: none; */
 }
 
 .input-box img {
     position: absolute;
-    right: 0px;
-    bottom: -20px;
+    right: 10px;
+    bottom: 5px;
     cursor: pointer;
-    width: 18px;
-    height: 18px;
+    width: 38px;
+    height: 28px;
 }
