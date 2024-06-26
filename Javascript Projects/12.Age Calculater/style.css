@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input{
+    font-size: 30px;
+}
+
+button{
+    padding: 20px;
+}
+
+.container{
+    margin: 100px;
+}
