@@ -1,10 +1,13 @@
 let btn = document.getElementById('ageBtn')
+let DoB = document.getElementById('date')
+DoB.max = new Date().toISOString().split('T')[0];
+
 
 btn.addEventListener('click', () => {
-let result = document.querySelector('.result')
+    let result = document.querySelector('.result')
     // All Users Date of Birth Get
-    let DoB = document.getElementById('date').value
-    let userBirthDate = new Date(DoB)
+
+    let userBirthDate = new Date(DoB.value)
     let ud = userBirthDate.getDate();
     let um = userBirthDate.getMonth() + 1;
     let uy = userBirthDate.getFullYear()
