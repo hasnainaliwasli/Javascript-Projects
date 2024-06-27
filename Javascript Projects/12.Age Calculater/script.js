@@ -1,7 +1,7 @@
 let btn = document.getElementById('ageBtn')
 
 btn.addEventListener('click', () => {
-
+let result = document.querySelector('.result')
     // All Users Date of Birth Get
     let DoB = document.getElementById('date').value
     let userBirthDate = new Date(DoB)
@@ -49,6 +49,8 @@ btn.addEventListener('click', () => {
     }
 
     console.log(ageY, ageM, ageD);
+
+    result.innerHTML = `You are ${ageY} Years ${ageM} Months and ${ageD} Days`
 
 
 })
