@@ -53,7 +53,7 @@ btn.addEventListener('click', () => {
 
     console.log(ageY, ageM, ageD);
 
-    result.innerHTML = `You are ${ageY} Years ${ageM} Months and ${ageD} Days`
+    result.innerHTML = `You age is <span>${ageY}</span> Years <span>${ageM}</span> Months and <span>${ageD}</span> Days`
 
 
 })
