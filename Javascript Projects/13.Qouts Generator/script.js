@@ -7,8 +7,6 @@ let author = document.getElementById('author')
 
 
 async function fetchQuotes() {
-    // Replace with your actual API key
-
     try {
         const response = await fetch(`https://api.api-ninjas.com/v1/quotes?`, {
             method: 'GET',
@@ -34,3 +32,8 @@ newQout.addEventListener('click', () => {
         author.innerHTML = authorName
     })();
 })
+
+tweet.addEventListener('click', () => {
+    window.open("https://twitter.com/intent/tweet?text=" + qout.innerHTML + " --By " + author.innerHTML, 'Tweet Window', " width =600 , height =300")
+})
+
