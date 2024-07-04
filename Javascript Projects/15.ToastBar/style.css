@@ -1,5 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* z-index: 1055; */
+    padding: 20px;
+}
+
+.toast{
+width: 400px;
+height: 80px;
+background: #fff;
+font-weight: 500;
+margin: 15px 0;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
