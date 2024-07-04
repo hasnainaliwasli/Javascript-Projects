@@ -123,6 +123,10 @@ let loggedinUserName = ''
 function Login() {
     let signinEmail = getElement('signinEmail').value
     let signinPassword = getElement('signinPassword').value
+    let allRegisteredUser = JSON.parse(localStorage.getItem('Users'))
+    if (!Array.isArray(allRegisteredUser)) {
+        todos = [];
+    }
 
     if (!signinEmail, !signinPassword) {
         return Toast('Please Fill out all the Fields', 'error')
@@ -135,9 +139,12 @@ function Login() {
         else {
             signinPassword = signinPassword.trim()
         }
-        let allRegisteredUser = JSON.parse(localStorage.getItem('Users'))
+       
 
         // For Getting the Name and ID of logged in user
+        // if(!allRegisteredUser){
+        //   return  Toast("User Not Found","error")
+        // }
         let filterMethod = allRegisteredUser.filter((user) => {
             return user.Email === signinEmail && user.Password === signinPassword;
         })
