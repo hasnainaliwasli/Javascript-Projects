@@ -14,16 +14,18 @@
     <div class="buttons d-flex justify-content-center align-items-center w-50 bg-dark rounded"
         style="margin-top: 13%;margin-left: 25%;padding: 100px;">
 
-        <button class="btn btn-primary" onclick="showMsg()">Success</button>
-        <button class="btn btn-primary mx-5" onclick="showMsg()">Error</button>
-        <button class="btn btn-primary" onclick="showMsg()">Warning</button>
+        <button class="btn btn-primary" onclick="showMsg(successMsg)">Success</button>
+        <button class="btn btn-primary mx-5" onclick="showMsg(errorMsg)">Error</button>
+        <button class="btn btn-primary" onclick="showMsg(invalidMsg)">Warning</button>
+
     </div>
     <div id="toastBox" class="text-white">
-      
+
     </div>
 
     <script src="./script.js"></script>
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/8d14b588cb.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
