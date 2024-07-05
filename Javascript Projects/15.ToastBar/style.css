@@ -25,6 +25,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.2s linear forwards;
+}
+@keyframes moveleft {
+    100%{
+    transform: translateX(0);
+
+    }
 }
 .toast::after {
     position: absolute;
